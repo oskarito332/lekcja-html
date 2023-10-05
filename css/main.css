@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #131313;
+    color: #dadada;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    /* margin: vertical horizontal */
+    /* margin: top right botton left; */
+}
+
+.card {
+    background: #1e1e1e;
+    border-radius: 0.5rem;
+    margin: 1.5rem auto;
+    display: flex;
+    overflow: hidden;
+}
+
+.card-img {  
+    aspect-ratio: 4 / 3;
+    width: 17rem;
+}
