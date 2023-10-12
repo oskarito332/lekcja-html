@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-font-color: rgb(147, 4, 4);
+}
+
 body {
     background: #131313;
     color: #dadada;
@@ -18,12 +22,18 @@ header {
     gap: 1rem;
 }
 
+
 main {
     width: 90%;
     margin: 0 auto;
     margin-top: 2.5rem;
     /* margin: vertical horizontal */
     /* margin: top right botton left; */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card {
@@ -34,7 +44,48 @@ main {
     overflow: hidden;
 }
 
+.card-subtitle {
+    /* font-weight: bold; */
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    margin-bottom: 1em;
+}
+
 .card-img {  
     aspect-ratio: 4 / 3;
     width: 17rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+    font-size: 1.3rem;
+}
+
+.card-text {
+    padding: 1em;
+}
+
+.card-desc {
+    line-height: 1.5em;
+}
+
+.card-desc:first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--main-font-color);
+    text-transform: uppercase;
+}
+
+.card-date {
+    color: var(--main-font-color);
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: var(--main-font-color);
 }
