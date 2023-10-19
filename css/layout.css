@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-font-color: rgb(147, 4, 4);
+    --text-color: #dadada;
+    --card-bg: #1e1e1e;
+}
+
+body {
+    background: #131313;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: var(--main-font-color);
+}
+
+header {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+main {
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    /* margin: vertical horizontal */
+    /* margin: top right botton left; */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.root {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 3rem;
+    gap: 3rem;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-top: 6rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--main-font-color);
+    margin-top: 3rem;
+    position: sticky;
+    top: 0;
+    /* padding: 1.5rem; */
+
+}
+
+.nav-item {
+    color: white;
+    padding: 1.5rem;
+    transition: 0.5s ease-in-out;
+}
+
+.nav-item:hover {
+    background-color: rgb(112, 3, 3)
+}
+
+@media only screen and (width <= 1200px) {
+    /* For mobile phones: */
+    .root {
+       flex-direction: column;
+    }
+}
+
+@media only screen and (width < 800px) {
+    nav {
+        flex-direction: column;
+        position: static;
+    }
+}

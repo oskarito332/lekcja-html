@@ -1,43 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --main-font-color: rgb(147, 4, 4);
-}
-
-body {
-    background: #131313;
-    color: #dadada;
-    font-family: 'Roboto', sans-serif;
-}
-
-header {
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-
-main {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 2.5rem;
-    /* margin: vertical horizontal */
-    /* margin: top right botton left; */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .card {
-    background: #1e1e1e;
+    background: var(--card-bg);
     border-radius: 0.5rem;
     margin: 1.5rem auto;
     display: flex;
@@ -71,7 +33,13 @@ main {
 
 .card-desc {
     line-height: 1.5em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+            /* line-clamp: 2;  */
+    -webkit-box-orient: vertical;
 }
+
 
 .card-desc:first-letter {
     font-size: 2em;
@@ -81,11 +49,5 @@ main {
 }
 
 .card-date {
-    color: var(--main-font-color);
-}
-
-a {
-    text-decoration: none;
-    font-size: 1.2em;
     color: var(--main-font-color);
 }
