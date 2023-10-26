@@ -92,14 +92,28 @@ nav {
     background-color: rgb(112, 3, 3)
 }
 
-.aside-link{
-    color: var(--main-font-color);
-    transition: 0.5s ease-in-out;
+.responsive-link {
+    transition: 0.2s ease-in-out;
+    height: 22px;
 }
 
-.aside-link:hover {
+.responsive-link:hover {
     color: orange;
     font-size: 1.5em;
+}
+
+.aside-link{
+    color: var(--main-font-color);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    padding: 1rem;
+    margin-top: 3rem;
+    background-color: rgba(112, 3, 3, 0.8);
+    /* background-color: rgb(255, 255, 255, 0.2); */
 }
 
 @media only screen and (width <= 1200px) {

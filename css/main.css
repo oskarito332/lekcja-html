@@ -103,10 +103,4 @@ aside {
 
 .card-link{
     color: var(--main-font-color);
-    transition: 0.5s ease-in-out;
-}
-
-.card-link:hover {
-    color: orange;
-    font-size: 1.5em;
 }
