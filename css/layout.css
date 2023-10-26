@@ -44,6 +44,16 @@ main {
     margin: 0 auto;
 }
 
+.container-page {
+    background: #1e1e1e;
+    border-radius: 0.5rem;
+    margin: 3.5rem auto;
+    display: flex;
+    overflow: hidden;
+    max-width: 1200px;
+    align-items: center;
+}
+
 .root {
     display: flex;
     flex-direction: row-reverse;
@@ -80,6 +90,16 @@ nav {
 
 .nav-item:hover {
     background-color: rgb(112, 3, 3)
+}
+
+.aside-link{
+    color: var(--main-font-color);
+    transition: 0.5s ease-in-out;
+}
+
+.aside-link:hover {
+    color: orange;
+    font-size: 1.5em;
 }
 
 @media only screen and (width <= 1200px) {
