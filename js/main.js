@@ -54,6 +54,7 @@ function createCard(cardData) {
     const cardLink = document.createElement('a');
     cardLink.classList.add('card-link', 'responsive-link');
     cardLink.innerHTML = 'Czytaj dalej...';
+    cardLink.setAttribute('href', `?page=${cardData.id}`);
     
     cardText.appendChild(cardHeader);
     cardText.appendChild(cardSubtitle);
@@ -74,7 +75,16 @@ function renderCars(card) {
     container.appendChild(card);
 }
 
-function renderContent() {
+function getPageNameFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageName = urlParams.get('page');
+    return pageName;
+}
+
+function renderMainPage() {
+    const header = document.createElement('h2');
+    header.innerHTML = 'Najbliższe święta';
+    document.querySelector('.container').appendChild(header);
     fetch('http://localhost:5000/events')
         .then(data => data.json())
         .then(data => {
@@ -86,4 +96,47 @@ function renderContent() {
 
 }
 
-renderContent();
+function renderSubPageContent(data) {
+    const container = document.querySelector('.container');
+
+    const containerPage = document.createElement('div');
+    containerPage.classList.add('container-page');
+
+    const image = document.createElement('img');
+    image.classList.add('main-image');
+    image.setAttribute('src', data.image);
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+
+    data.description.forEach(item => {
+        const p = document.createElement('p');
+        p.innerHTML = item;
+        content.appendChild(p);
+    });
+
+    containerPage.appendChild(image);
+    containerPage.appendChild(content);
+
+    container.appendChild(containerPage);
+}
+
+function renderPage(id) {
+    fetch('http://localhost:5000/events')
+        .then(data => data.json())
+        .then(data => data.filter(item => item.id == id))
+        .then(data => renderSubPageContent(data[0]))
+}
+
+
+function renderContent() {
+    const id = getPageNameFromUrl();
+    console.log(id);
+    if(id) {
+        renderPage(id);
+    } else {
+        renderMainPage();
+    }
+}
+
+window.onload = renderContent;
